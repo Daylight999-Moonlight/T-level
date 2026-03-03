@@ -40,12 +40,27 @@ build
 
 
 ### Toggle switch 
-<label class="inline-flex items-center cursor-pointer">
-  <span class="select-none text-sm font-medium text-heading">Monthly</span>
-  <input type="checkbox" value="" class="sr-only peer">
-  <div class="relative mx-3 w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"></div>
-  <span class="select-none text-sm font-medium text-heading">Yearly</span>
+<label class="flex items-center gap-3 cursor-pointer">
+  <span class="text-sm font-medium text-gray-800 dark:text-gray-200">Light Mode</span>
+
+  <button 
+    id="theme-toggle"
+    type="button"
+    role="switch"
+    aria-checked="false"
+    class="relative w-10 h-5 rounded-full bg-gray-400 transition-colors 
+           dark:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+  >
+    <span 
+      class="absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-white shadow 
+             transition-transform transform"
+      id="theme-thumb"
+    ></span>
+  </button>
+
+  <span class="text-sm font-medium text-gray-800 dark:text-gray-200">Dark Mode</span>
 </label>
+
 
 
 ### Rnage (For text size)
