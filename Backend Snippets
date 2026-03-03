@@ -1,0 +1,67 @@
+# T-Level
+
+## Backend Snippets 
+
+app/
+|
+|----- config/ (Configuration of application)
+|          |
+|          |----- __init__.py
+|          |----- settings.py
+|          |----- sec.py 
+|----- models/ (Contains Database Models or Tables)
+|          |
+|          |----- __init__.py
+|          |----- models.py#
+|----- middlewares (Contains middleware fro incoming request & Response)
+|          |
+|          |------ __init__.py
+|          |----- middleware.py
+|----- schemas (Contains Request & Resposne schemas)
+|          |
+|          |----- __init__.py
+|          |----- schemas.py
+|----- routers (Conatins endpoints of the application)
+|          |
+|          |----- __init__.py
+|          |----- user.py
+|----- utils (Contains services and dependencies like hashing, genarate, authorissation of jwt0
+|          |
+|          |----- __init__.py
+|          |----- hashing.py
+|          |----- oauth2.py
+|----- __init__.py
+|----- main.py (Starts the server)
+|----- database.py (Creates session with database)
+|----- .env (Contains environemnt variables)
+
+
+### .env (Constains enviornment variables)
+  APP_DATABASE_URL: str
+  APP_ACCESS_TOKEN_SECRET_KEY: str
+  APP_REFRESH_TOKEN_SECRET_KEY: str
+  APP_ACCESS_TOKEN_EXPIRE_MINUTES: int
+  APP_REFRSH_TOKEN_EXPIRE_DAYS: int
+  ALGORITHM: str
+  APP_ENV: str
+
+
+### settings.py (Loads Environment variables from .env)
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+### sec.py (Creates API secret key, access token, refresk token)
+import secrets
+print("ACCESS TOKEN", secrets.token_hex(64))
+
+
+### models.py (Creates my Database Tables using sqlalchemy)
+from sqlalchemy import Column, String, Boolean, TIMESTAMP, Integer, Enum, func
+from app.database import Base
+import uuid
+
+
+
+
+
+
