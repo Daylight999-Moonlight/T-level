@@ -2,6 +2,15 @@
 
 ## Backend Snippets 
 
+### Backend Package dependencies Installation
+python -m venv {name of environement} - Creates a Virtual Environment
+pip install passlib[bcrypt] - Library for Hashing
+pip install fastapi[all] - Framework for API development
+pip install sqlalchemy - ORM for database Modles & Tables
+pip install alembic - Migration tool for Database Models
+pip install jinja - For fastapi rendering of Template
+
+
 app/
 |
 |----- config/ (Configuration of application)
